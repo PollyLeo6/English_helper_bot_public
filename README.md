@@ -1,46 +1,27 @@
 # English Helper Bot
 
-Telegram bot for guided English practice with structured task libraries, automatic scoring, progress tracking, and a clean callback-based user flow.
+**English Helper Bot** is a Telegram bot for guided English practice. It helps learners choose a level and module, complete interactive tasks step by step, receive automatic feedback, and track their progress.
 
-This public repository is a sanitized showcase version. It contains the application architecture and a small demo task library, but does not include production secrets, logs, runtime state, internal content-generation scripts, deployment notes, or the full private task corpus.
+Try the bot in Telegram: **https://t.me/engleohelperbot**
 
-## What Is Included
+<p align="center">
+  <img src="docs/screenshots/logo-removebg-preview.png" alt="English Helper Bot logo" width="220"/>
+</p>
 
-- Telegram bot application code
-- Domain services for task sessions, scoring, and progress
-- File-based storage adapters
-- Library loader for JSON task packs
-- Rule-based and LLM-compatible scoring adapters
-- Demo screenshots
-- A minimal demo library under `src/libraries/demo_english`
+## Product Idea
 
-## What Is Not Included
+The bot is designed as a lightweight learning assistant for English practice outside the classroom. Instead of sending students long worksheets, it turns exercises into a conversational Telegram flow:
 
-- Real `.env` files and bot tokens
-- Production runtime data
-- User progress/state logs
-- Internal authoring scripts
-- Full private task libraries
-- Server deployment details
+- choose a course library
+- select a module such as Grammar, Vocabulary, Reading, or Speaking
+- open tasks grouped by textbook-style units
+- answer questions one by one
+- get a score and feedback
+- return to progress and continue later
 
-## Project Map
+The goal is to make homework and revision easier to start, easier to check, and easier to continue.
 
-- `src/app/main.py` - application entrypoint
-- `src/app/config.py` - environment-based configuration
-- `src/bot/` - Telegram router, handlers, middleware, keyboards, renderers
-- `src/core/` - domain models, ports, and services
-- `src/infra/` - storage, scoring, and library infrastructure
-- `src/libraries/` - demo JSON task libraries
-- `docs/screenshots/` - UI screenshots
-
-## User Flow
-
-1. Open the bot in Telegram.
-2. Choose `Do tasks`.
-3. Select a library, module, unit, and task.
-4. Submit answers step by step.
-5. Receive a score and feedback.
-6. Review progress or retry tasks.
+## Screenshots
 
 <p align="center">
   <img src="docs/screenshots/bot_1.jpg" alt="Bot navigation and task selection" width="420"/>
@@ -49,6 +30,65 @@ This public repository is a sanitized showcase version. It contains the applicat
 <p align="center">
   <img src="docs/screenshots/bot_2.jpg" alt="Task execution and feedback" width="420"/>
 </p>
+
+## Key Features
+
+- Telegram-first learning flow
+- Course libraries with levels, modules, units, and tasks
+- Step-by-step task sessions
+- Automatic scoring with rule-based checks
+- LLM-compatible scoring adapter for richer feedback
+- Progress tracking by user, library, module, and task
+- JSON-based content format for adding new exercises
+- Clean callback navigation with Back, Retry, Next task, and Progress flows
+
+## Tech Stack
+
+- Python
+- aiogram
+- Pydantic-style domain models
+- JSON task libraries
+- File-based state and event storage
+- Optional OpenAI-compatible LLM scoring endpoint
+- uv for local dependency management
+
+## Architecture
+
+The project is split into clear layers:
+
+- `src/app` - configuration, dependency wiring, startup
+- `src/bot` - Telegram router, handlers, middleware, keyboards, renderers
+- `src/core` - domain models and services for sessions, scoring, and progress
+- `src/infra` - storage, task-library loading, and scoring adapters
+- `src/libraries` - JSON task libraries used by the bot
+
+This structure keeps the learning engine separate from Telegram UI code, so the core task/session logic can be tested and extended independently.
+
+## Task Library Model
+
+Task content is stored as JSON. A library can contain multiple modules, and each module can group tasks into units:
+
+```text
+src/libraries/<library_id>/
+  library.json
+  modules/
+    <module_id>/
+      module.json
+      tasks/
+        task_001.json
+```
+
+Example module grouping:
+
+```json
+{
+  "group_id": "u1a",
+  "title": "Unit 1A - Everyday plans",
+  "tasks": ["task_001"]
+}
+```
+
+This makes it possible to represent textbook-like navigation inside Telegram while keeping the content editable as structured data.
 
 ## Local Run
 
@@ -83,43 +123,6 @@ Run the bot:
 uv run python -m src.app.main
 ```
 
-## Task Library Format
+## Why This Project Matters
 
-Libraries are JSON-based and live under `src/libraries`.
-
-```text
-src/libraries/<library_id>/
-  library.json
-  modules/
-    <module_id>/
-      module.json
-      tasks/
-        task_001.json
-```
-
-Each task contains:
-
-- `task_id`
-- `title`
-- `texts`
-- `questions`
-- optional `answers`
-- optional `rubric`
-- optional `tags`, `difficulty`, and `source`
-
-Modules can group tasks into textbook-like sections with `task_groups`, for example `Unit 1A - Food and cooking`.
-
-## Architecture
-
-The codebase is split into four main layers:
-
-- `core` - business logic and domain models
-- `infra` - concrete adapters for storage, scoring, and library loading
-- `bot` - Telegram UI and callback routing
-- `app` - configuration, dependency wiring, and startup
-
-This keeps the task engine testable outside Telegram and makes it possible to swap scoring/storage implementations without rewriting the bot handlers.
-
-## Security Notes
-
-Never commit real `.env` files, tokens, logs, runtime state, or user data. This public copy intentionally ships only `.env.example` and demo content.
+English Helper Bot combines product thinking, educational content design, and backend engineering. It shows how a familiar interface like Telegram can be used to build a practical learning tool with structured content, automated assessment, and persistent learner progress.
