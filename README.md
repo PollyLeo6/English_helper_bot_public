@@ -135,4 +135,4 @@ English Helper Bot combines product thinking, educational content design, and ba
 
 ## Feedback
 
-If you notice a bug, have an idea, or want to share feedback, feel free to message me on Telegram: **@pollyleo6**.
+If you notice a bug, have an idea, or want to share feedback, feel free to message me on Telegram: **[@pollyleo6](https://t.me/pollyleo6)**.
