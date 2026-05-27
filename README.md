@@ -4,6 +4,8 @@
 
 Try the bot in Telegram: **https://t.me/engleohelperbot**
 
+This repository is a public demonstration version of the project. The full development repository, including dated working materials, private configuration, production data, and internal content tooling, is kept private for development security.
+
 <p align="center">
   <img src="docs/screenshots/logo-removebg-preview.png" alt="English Helper Bot logo" width="220"/>
 </p>
@@ -23,9 +25,13 @@ The goal is to make homework and revision easier to start, easier to check, and 
 
 ## Screenshots
 
+The main menu guides learners into the task flow. From here, a user can start practice, choose a library, and navigate through modules such as Grammar, Vocabulary, Reading, and Speaking.
+
 <p align="center">
   <img src="docs/screenshots/bot_1.jpg" alt="Bot navigation and task selection" width="420"/>
 </p>
+
+Inside a task, the bot presents the exercise step by step, collects the learner's answer, calculates a score, and returns feedback directly in the chat.
 
 <p align="center">
   <img src="docs/screenshots/bot_2.jpg" alt="Task execution and feedback" width="420"/>
