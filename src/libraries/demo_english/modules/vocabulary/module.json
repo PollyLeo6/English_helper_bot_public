@@ -1,0 +1,21 @@
+{
+  "module_id": "vocabulary",
+  "title": "Vocabulary",
+  "description": "Sample vocabulary tasks.",
+  "version": 1,
+  "task_groups": [
+    {
+      "group_id": "u1b",
+      "title": "Unit 1B - Food words",
+      "tasks": [
+        "task_001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "task_001",
+      "title": "Food words - Match the meaning"
+    }
+  ]
+}

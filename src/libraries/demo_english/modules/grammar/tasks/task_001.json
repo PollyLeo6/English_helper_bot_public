@@ -1,0 +1,22 @@
+{
+  "task_id": "task_001",
+  "title": "Everyday plans - Future forms",
+  "version": 1,
+  "tags": [
+    "grammar",
+    "future_forms",
+    "demo"
+  ],
+  "difficulty": "A2",
+  "texts": [
+    "Complete the sentences with the correct future form.\n\nOptions: will / be going to / present continuous\n\n1. I ______ meet Alex at 6 p.m. We arranged it yesterday.\n2. Look at those clouds. It ______ rain.\n3. A: The phone is ringing.\n   B: I ______ answer it."
+  ],
+  "questions": [
+    "Write the three missing forms in order."
+  ],
+  "answers": [
+    "am going to meet",
+    "is going to rain",
+    "will answer"
+  ]
+}

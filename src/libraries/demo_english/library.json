@@ -1,0 +1,18 @@
+{
+  "library_id": "demo_english",
+  "title": "Demo English",
+  "description": "Small public demo library with sample English practice tasks.",
+  "version": 1,
+  "modules": [
+    {
+      "module_id": "grammar",
+      "title": "Grammar",
+      "description": "Sample grammar tasks."
+    },
+    {
+      "module_id": "vocabulary",
+      "title": "Vocabulary",
+      "description": "Sample vocabulary tasks."
+    }
+  ]
+}

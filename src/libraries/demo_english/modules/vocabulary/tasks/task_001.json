@@ -1,0 +1,22 @@
+{
+  "task_id": "task_001",
+  "title": "Food words - Match the meaning",
+  "version": 1,
+  "tags": [
+    "vocabulary",
+    "food",
+    "demo"
+  ],
+  "difficulty": "A2",
+  "texts": [
+    "Match each word with its meaning:\n\n1. spicy\n2. raw\n3. frozen"
+  ],
+  "questions": [
+    "Write the meanings for spicy, raw, and frozen."
+  ],
+  "answers": [
+    "hot or strongly flavored",
+    "not cooked",
+    "kept very cold and hard"
+  ]
+}

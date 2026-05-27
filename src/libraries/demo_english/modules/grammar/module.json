@@ -1,0 +1,21 @@
+{
+  "module_id": "grammar",
+  "title": "Grammar",
+  "description": "Sample grammar tasks.",
+  "version": 1,
+  "task_groups": [
+    {
+      "group_id": "u1a",
+      "title": "Unit 1A - Everyday plans",
+      "tasks": [
+        "task_001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "task_001",
+      "title": "Everyday plans - Future forms"
+    }
+  ]
+}
