@@ -132,3 +132,7 @@ uv run python -m src.app.main
 ## Why This Project Matters
 
 English Helper Bot combines product thinking, educational content design, and backend engineering. It shows how a familiar interface like Telegram can be used to build a practical learning tool with structured content, automated assessment, and persistent learner progress.
+
+## Feedback
+
+If you notice a bug, have an idea, or want to share feedback, feel free to message me on Telegram: **@pollyleo6**.
